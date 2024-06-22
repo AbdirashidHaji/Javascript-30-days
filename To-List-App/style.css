@@ -1,0 +1,134 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+#date-time {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: calc(100% - 60px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: var(--inset-shadow);
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: var(--bg-color);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+button.delete {
+    background-color: #dc3545;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+button.delete:hover {
+    background-color: #c82333;
+}
+
+.theme-selector {
+    margin-top: 20px;
+}
+
+.subtask-input {
+    margin-top: 10px;
+    display: none;
+    flex-direction: column;
+}
+
+.subtask-input input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: var(--inset-shadow);
+    margin-bottom: 5px;
+}
+
+.subtask-list {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+/* Theme Styles */
+:root {
+    --bg-color: #f4f4f4;
+    --box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+    --inset-shadow: inset 10px 10px 20px #bebebe, inset -10px -10px 20px #ffffff;
+}
+
+body.dark {
+    --bg-color: #333;
+    --box-shadow: 10px 10px 20px #222, -10px -10px 20px #444;
+    --inset-shadow: inset 10px 10px 20px #222, inset -10px -10px 20px #444;
+    color: #fff;
+}
+
+body.blue {
+    --bg-color: #87ceeb;
+    --box-shadow: 10px 10px 20px #6baed6, -10px -10px 20px #a1d0f7;
+    --inset-shadow: inset 10px 10px 20px #6baed6, inset -10px -10px 20px #a1d0f7;
+    color: #000;
+}
