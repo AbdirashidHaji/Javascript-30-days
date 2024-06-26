@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="player-container">
+        <div class="player">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DZr1pjwdx_w?si=YDb6tw4QPa1b0K_s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="controls">
+            <button id="playPauseBtn">Play</button>
+            <button id="stopBtn">Stop</button>
+            <input type="range" id="seekBar" value="0" max="100">
+        </div>
+    </div>
+    <script>
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const iframe = document.querySelector('iframe');
+        
+        playPauseBtn.addEventListener('click', () => {
+            if (iframe.src.includes('autoplay=1')) {
+                iframe.src = iframe.src.replace('autoplay=1', 'autoplay=0');
+                playPauseBtn.textContent = 'Play';
+            } else {
+                iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1');
+                playPauseBtn.textContent = 'Pause';
+            }
+        });
+        
+        stopBtn.addEventListener('click', () => {
+            iframe.src = iframe.src.replace('autoplay=1', 'autoplay=0');
+            iframe.src = iframe.src.replace('&start=0', '');
+            playPauseBtn.textContent = 'Play';
+        });
+    </script>
+</body>
+</html>
